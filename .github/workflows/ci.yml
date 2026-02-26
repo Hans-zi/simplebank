@@ -10,14 +10,13 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    container: node:20-bookworm-slim
     services:
       postgres:
         image: postgres
         env:
           POSTGRES_PASSWORD: xiaohan1234
           POSTGRES_USER: root
-          POSTGRES_DB: simplebank
+          POSTGRES_DB: simple_bank
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -36,9 +35,9 @@ jobs:
 
       - name: Install migrate
         run:
-          curl -L https://github.com/golang-migrate/migrate/releases/download/v4.19.1/migrate.linux-amd64.tar.gz | tar xvz
-          sudo mv migrate /usr/bin/migrate
-          which migrate
+          curl -L https://github.com/golang-migrate/migrate/releases/download/v4.19.1/migrate.linux-amd64.tar.gz | tar xvz;
+          sudo mv migrate /usr/bin/migrate;
+          which migrate;
 
       - name: Migrateup
         run: make migrateup
