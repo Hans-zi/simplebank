@@ -10,7 +10,7 @@ import (
 	_ "github.com/lib/pq"
 )
 
-var store *db.Store
+var store db.Store
 
 func main() {
 	config, err := util.LoadConfig(".")

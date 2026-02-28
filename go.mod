@@ -1,4 +1,4 @@
-module github.com/Hans-zi/simplebank
+module github.com/Hans-zi/simple_bank
 
 go 1.24.11
 
